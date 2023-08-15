@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-    max-width: 500px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -14,12 +14,17 @@ h1 {
 
 form {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Center aligns the form elements vertically */
 }
 
 input[type="text"] {
     flex: 1;
     padding: 10px;
     margin-right: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in the element's total width */
 }
 
 button {
