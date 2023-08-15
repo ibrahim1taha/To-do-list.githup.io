@@ -14,12 +14,15 @@ h1 {
 
 form {
     display: flex;
+    flex-wrap: wrap; /* Added flex-wrap to wrap the form elements on smaller screens */
+    justify-content: center; /* Center aligns the form elements */
 }
 
 input[type="text"] {
     flex: 1;
     padding: 10px;
     margin-right: 10px;
+    width: 100%; /* Makes the input field take full width on smaller screens */
 }
 
 button {
