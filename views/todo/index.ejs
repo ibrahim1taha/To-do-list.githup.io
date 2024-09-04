@@ -6,13 +6,13 @@
 <body>
     <div class="container">
         <h1><%= appTitle %></h1>
-        <form id="form1">
-            <input type="text" id="taskinp" placeholder="Enter a task" required>
+        <form id="form1" action="/" method="post">
+            <input type="text" id="taskinp" name="taskTitle" placeholder="Enter a task" required>
             <button type="submit" id="pushdata">Add Task</button>
         </form>
         <ul id="taskList">
             <% tasks.forEach(function(task) { %>
-                <li><%= task %></li>
+                <li><%= task.taskTitle %></li>
             <% }); %>
         </ul>
     </div>
