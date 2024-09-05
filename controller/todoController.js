@@ -8,7 +8,7 @@ exports.getTasks = ((req , res , next) => {
         res.render('todo/index' , {
             title : "todo" , 
             path: '/todo' , 
-            appTitle : "todo list" , 
+            appTitle : "TODO LIST" , 
             tasks : tasks , 
         })
     }).catch((err) => {
@@ -25,4 +25,18 @@ exports.addTasks = (req , res , next) => {
     }).catch((err) => {
         console.log(err); 
     });
+}
+
+exports.deleteTasks = (req, res , next) => {
+    const taskId = req.body.taskId ; 
+    console.log(taskId); 
+
+    Tasks.findByPk(taskId).then((task) => {
+        return task.destroy();
+    }).then(() => {
+        res.redirect('/'); 
+    })
+    .catch((err) => {
+        console.log(err) ; 
+    }); 
 }

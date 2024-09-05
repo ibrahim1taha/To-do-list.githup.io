@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
-<meta charset="UTF-8" />
-<title><%= title %></title>
-<link rel="stylesheet" href="/css/style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 <body>
     <div class="container">
         <h1><%= appTitle %></h1>
@@ -12,7 +15,13 @@
         </form>
         <ul id="taskList">
             <% tasks.forEach(function(task) { %>
-                <li><%= task.taskTitle %></li>
+                <li class="task-item" data-task-id="<%= task.id %>">
+                    <span class="task-text"><%= task.taskTitle %></span>
+                    <form action="/delete-task" method="POST">
+                        <input type="hidden" value="<%= task.id %>" name="taskId">
+                        <button class="task-delete" type="submit" >Delete</button>
+                    </form>
+                </li>
             <% }); %>
         </ul>
     </div>

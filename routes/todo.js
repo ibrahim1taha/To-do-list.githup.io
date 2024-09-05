@@ -6,5 +6,6 @@ const todoController = require('../controller/todoController') ;
 
 router.get('/' , todoController.getTasks) ; 
 router.post('/' , todoController.addTasks); 
+router.post('/delete-task' , todoController.deleteTasks); 
 
 module.exports = router ; 
